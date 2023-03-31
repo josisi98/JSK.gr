@@ -20,12 +20,10 @@ form.addEventListener("click", (e)=>{
     let recup = JSON.parse(localStorage.getItem("Admin"))
     console.log(recup)
     if(email.value === recup.email && mot_de_passe.value === recup.mot_de_passe){
-        alert("pass")
         window.location.href = "dash.html"
-    }else{
-         alert("reeor")
-         window.location.reload()
-    }
-})
+    
+    };
+    
+})   
 
 
