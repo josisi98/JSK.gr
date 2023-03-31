@@ -5,32 +5,37 @@
 // ]
 
 let recuMod = JSON.parse(localStorage.getItem('object'))
-readAll()
+
 function readAll(){
     let recup = JSON.parse(localStorage.getItem('object'))
-    var tabledata = document.querySelector(".data_table");
-    recup.forEach(record => ( 
+    const tabledata = document.querySelector(".data_table");
+    tabledata.innerHTML=''
+    
+    recup.forEach(record => {
         row = `<tr id="${record.id}">
-              <td>${record.nom}</td>
-              <td>${record.age}</td>
-              <td>${record.adresse}</td>
-              <td>${record.email}</td>
-              <td>${record.contact}</td> 
+        <td>${record.nom}</td>
+        <td>${record.age}</td>
+        <td>${record.adresse}</td>
+        <td>${record.email}</td>
+        <td>${record.contact}</td> 
 
-              <td>
-              <button class="modifier" onclick{modifier(${record.id})}>Modifier</button>
-              <button class ="supprimer" onclick{supprimer(${record.id})}>supprimer</button>
-              </td>
-              
-        </tr>`
-    ))
+        <td>
+        <button class="modifier" onclick{modifier(${record.id})}>Modifier</button>
+        <button class ="supprimer" onclick{supprimer(${record.id})}>supprimer</button>
+        </td>
+        
+  </tr>`
+  tabledata.innerHTML += row;
 
-    tabledata.innerHTML += row;
+    })
+
 }
 
 function supprimer(id){
     recuMod = recuMod.filter(rec => rec.id !== id);
+    localStorage.setItem('object', JSON.stringify(recuMod))
     readAll();
+    addEvent()
 }
 
 function creer(){
@@ -81,27 +86,37 @@ function mise_à_jour(){
     var email = document.querySelector(".uemail").value;
     var contact = document.querySelector(".ucontact").value;
 
-    let filtEmp = rr.filter(emp => emp.id !== id)
-    console.log(filtEmp)
-    var index = rr.find(rec => rec.id === id);
+    let index = rr.findIndex(rec => rec.id === id);
+    console.log('index : index', index)
     rr[index] = {id, nom, age, adresse, email, contact};
-    console.log(rr[index])
-    filtEmp.push(rr[index])
-    localStorage.setItem('object', JSON.stringify(filtEmp))
+    localStorage.setItem('object', JSON.stringify(rr))
     // console.log(de);
     document.querySelector(".update_from").style.display = "none"
     console.log("update_from")
-     
     readAll()
+    addEvent()
 }
 
-window.addEventListener("load", ()=>{
+function addEvent() {
     let mod = document.querySelectorAll(".modifier")
+    let sup = document.querySelectorAll('.supprimer')
     mod.forEach(b => {
         b.addEventListener("click", (e)=>{
             const id = e.target.closest('tr').id
             modifier(id)
         })
     })
-    console.log(mod)
+    sup.forEach(s => {
+        s.addEventListener('click', (e)=> {
+            const id = e.target.closest('tr').id
+            console.log('ahahaha',  id)
+            supprimer(parseInt(id))
+        })
+    })
+
+}
+
+window.addEventListener("load", ()=> {
+    readAll()
+    addEvent()
 })

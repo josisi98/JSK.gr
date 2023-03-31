@@ -1,25 +1,31 @@
-const signUpButton = document.getElementById("signUp");
-const signInButton = document.getElementById("signIn");
-const container = document.getElementById("container");
-let nom = document.getElementById("nom")
-let email = document.getElementById("email")
-let mot_de_passe  = document.getElementById("mot_de_passe")
+
+let form = document.querySelector("form")
+console.log(form)
+
+console.log(utili)
+
+console.log(passe)
 
 let user_main = {
     email:"josias@98gmail.com",
     mot_de_passe:"taylerjim"
 }
 
+localStorage.setItem("Admin",JSON.stringify(user_main))
 
-signUpButton.addEventListener("click",()=>{
-    container.classList.add("right-panel-active");
-    console.log("ghfdnv",nom.value)
-console.log("ghfdnv",email.value)
-console.log("ghfdnv",mot_de_passe.value)
-})
-signInButton.addEventListener("submit",()=>{
-    container.classList.remove("right-panel-active");
-    localStorage.setItem("Admin",JSON.stringify(user_main))
+form.addEventListener("click", (e)=>{
+    e.preventDefault()
+    let email = document.getElementById("utili")
+    let mot_de_passe  = document.getElementById("passe")
+    let recup = JSON.parse(localStorage.getItem("Admin"))
+    console.log(recup)
+    if(email.value === recup.email && mot_de_passe.value === recup.mot_de_passe){
+        alert("pass")
+        window.location.href = "dash.html"
+    }else{
+         alert("reeor")
+         window.location.reload()
+    }
 })
 
-let sp_Ad = JSON.parse(localStorage.getItem("Admin"))
+
