@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600&family=Pinyon+Script&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300&family=Rum+Raisin&display=swap');
+/*---------------------- global--------------------- */
+*{
+    font-family: "Alkatra",sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --violet:#540DAF;
+    --white: #ffff;
+    --gray:#f5f5f5;
+    --black1:#222;
+    --black2:#9999;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.josi{
+    position: relative;
+    width: 100%;
+}
+/*---------------navigation----------------*/
+.navigation{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: var(--violet);
+    border-left:10px solid var(--violet);
+    transition: 0,5s;
+    overflow: hidden;
+    border-top-right-radius: 30px;
+}
+
+.navigation.active{
+    width: 80px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered{
+    background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--black1);
+}
+
+.navigation ul li a:hover,
+.navigation ul li a.hovered{
+    color: var(--violet);
+}
+
+.png{
+    position: relative;
+    width: 200px;
+    height: 100px;
+    border-radius: 20%;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.png img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 70px;
+    text-align: start;
+    white-space: nowrap;
+    font-size:25px;
+}
+
+/* ---------------------exterieur--------------------- */
+.navigation ul li:hover  a::before,
+.navigation ul li.hovered  a::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigation ul li:hover  a::after,
+.navigation ul li.hovered  a::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+/* -------------principale----------- */
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.main.active{
+    width: calc(100% - 80px); 
+    left: 80px; 
+}
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18;
+    outline: none;
+    border: 1px solid var(--black1);
+}
+
+.search label ion-icon{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+}
+
+.user{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* -----------------cardre-------------- */
+
+.cardre{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+}
+
+.cardre .card{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.80);
+}
+
+.cardre .card.numbers{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--violet);
+}
+
+.cardre .card .nomcadre{
+    color: var(--black2);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.cardre .card .iconbx{
+    font-size: 3.5rem;
+    color: var(--black2);
+}
+
+.cardre .card:hover{
+    background: var(--violet);
+}
+
+.cardre .card:hover .numbers,
+.cardre .card:hover .nomcadre,
+.cardre .card:hover .iconbx{
+    color: var(--white);
+}
+
+/* -----------------------vue d'ensemble----------------------*/
+
+.detail{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    /* margin-top: 10px; */
+}
+
+.detail .vueRecente{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow:0 7px 25px rgba(0, 0, 0, 0.80);
+    border-radius: 20px;
+}
+
+.detail .enTete{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.enTete h2{
+    font-weight: 600;
+    color: var(--violet);
+}
+
+.detail .bnt{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--violet);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+
+.detail table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.detail table thead td{
+    font-weight: 600;
+}
+
+.detail .vueRecente table tr{
+    color: var(--black1);
+    border-bottom: rgba(0, 0, 0, 0.1);
+}
+
+.detail .vueRecente table tr:last-child{
+    border-bottom: none;
+}
+
+.detail .vueRecente table tbody tr:hover{
+    background: var(--violet);
+    color: var(--white);
+}
+
+.detail .vueRecente table tr td{
+    padding: 10px;
+}
+
+.detail .vueRecente table tr td:last-child{
+    text-align: end;
+}
+
+.detail .vueRecente table tr td:nth-child(2){
+    text-align: end;
+}
+
+.detail .vueRecente table tr td:nth-child(3){
+    text-align: center;
+}
+
+.status.En.Attente{
+    padding: 2px 4px;
+    background:rgba(222, 171, 6, 0.89);
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.status.Terminer{
+    padding: 2px 4px;
+    background:rgb(5, 191, 5);
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.status.En.Cours{
+    padding: 2px 4px;
+    background:rgba(255, 0, 0, 0.845);
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.utilRecent{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: var(--white);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.80);
+    border-radius: 20px;  
+}
+
+.utilRecent .imgbx{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.utilRecent .imgbx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.utilRecent table tr td{
+    padding: 12px 10px;
+}
+
+.utilRecent table tr td h4{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+.utilRecent table tr td h4 span{
+    font-size: 14px;
+    color: var(--black2);
+}
+
+.utilRecent table tr:hover{
+    background: var(--violet);
+    color: var(--white);
+}
+
+.utilRecent table tr:hover td h4 span{
+    color: var(--white); 
+}
+
+/*------------------------------resposivité----------------------*/
+@media(max-width:991px) {
+    .navigation {
+        left: -300px;
+    }
+
+    .navigation.active{
+        width: 300px;
+        left: 0;   
+    }
+
+    .main{
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active{
+        left: 300px;
+    }
+
+    .cardre{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:768px) {
+    .detail{
+        grid-template-columns: 1fr;
+    }
+
+    .vueRecente{
+        overflow: auto;
+    }
+
+    .status.inProgress{
+        overflow-x: nowrap;
+    }
+}
+
+@media(max-width) {
+    .cardre{
+        grid-template-columns: repeat(1 ,1fr);
+    }
+
+    .enTete h2{
+        font-size: 20px;
+    }
+
+    .user{
+        min-width: 40px;
+    }
+
+    .navigation{
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .toggle{
+        z-index: 10001;
+    }
+
+    .main.active .toggle{
+        color: #fff;
+        position: fixed;
+        right: 0;
+        left: initial;
+    }
+    
+}
+    
+ 

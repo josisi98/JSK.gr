@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../F css/Employé.css">
+    <title>Employés</title>
+</head>
+<body onload="readAll()">
+    <div class="container">
+        <div class="form_container">
+            <form class="creat_form">
+                <input type="text" class="nom" placeholder="Entrer Nom"/>
+                
+                <input type="age" class="age" placeholder="Entrer Age"/>
+                <input type="adresse" class="adresse" placeholder="Entrer Adresse"/>
+                <input type="email" class="email" placeholder="Entrer Email"/>
+                <input type="contact" class="contact" placeholder="Entrer Contact"/>
+                <button type="button" onclick="ajouter()">creer</button>
+            </form>
+            <form class="update_from">
+                <input type="text" hidden class="id"/>
+                <input type="text" class="unom"/>
+                <input type="age" class="uage"/>
+                <input type="adresse" class="uadresse"/>
+                <input type="email" class="uemail"/>
+                <input type="contact" class="ucontact"/>
+                <button type="button" onclick="mise_à_jour()">mise à jour</button>
+            </form>
+            <div class="add_div">
+                 <button onclick="creer()">ajouter+</button>
+            </div>
+            <table>
+                <thead>
+                    <th>Nom</th>
+                    <th>Age</th>
+                    <th>Adresse</th>
+                    <th>Email</th>
+                    <th>contact</th>
+                    <th>Action</th>
+                </thead>
+
+                <tbody class="data_table">
+                     
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../F js/Employé.js"></script>
+</body>
+</html>

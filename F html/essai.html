@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../F css/essai.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>tay</title>
+</head>
+<body>
+     <div class="header">
+        <h5>Employé</h5>
+     </div>
+     <div class="upper-bnt-box">
+     <div class="left-box">
+        <button id="add-bnt"><i class="fa-regular fa-plus"></i> &nbsp; ajouter</button>
+        <button style="background-color: #33B5E6;"><i class="fa-solid fa-eraser" ></i> &nbsp; filtrage</button>
+     </div>
+     <div class="right-box">
+        <i class="fa-solid fa-magnifying-glass"></i>  
+        <input type="text" id="empId" placeholder="Entrer id Employe">
+        <button style="background-color: #EE534f ">recherche</button>
+     </div>
+     </div>
+     <div class="table-box">
+        <table id="table-data">
+        <tr>
+            <th>id</th>
+            <th>profil</th>
+            <th>Nom</th>
+            <th>prenom</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Adresse</th>
+            <th>tâche</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>
+                <button><i class="fa-solid fa-eye"></i></button>
+                <button style="background-color: #EE534f"><i class="fa-solid fa-trash"></i></button>
+            </td>
+            <tbody id="table-data">
+
+            </tbody>
+        </tr>
+    </table>
+     </div>
+     <div class="modal">
+        <div class="close">
+        <i class="fa-solid fa-circle-xmark"></i> 
+    </div>    
+           <div class="left-modal">
+            <div class="img-box">
+                <img src="../F image/m2.jpg" width="100" height="100" alt="">
+                <i class="fa-regular fa-plus"></i>
+                <input type="file">
+        </div>
+    </div>
+        <div class="right-modal">
+            <form id="register-form">
+            <div class="input-box">
+            <label for="id">Id</label>
+            <input type="text" id ="id">
+        </div>
+
+        <div class="input-box">
+            <label for="id">Non</label>
+            <input type="text" id ="Non">
+        </div>
+
+        <div class="input-box">
+            <label for="id">Prenom</label>
+            <input type="text" id ="Prenom">
+        </div>
+
+        <div class="input-box">
+            <label for="id">Age</label>
+            <input type="text" id ="Age">
+        </div>
+
+        <div class="input-box">
+            <label for="id">Email</label>
+            <input type="text" id ="Email">
+        </div>
+
+        <div class="input-box">
+            <label for="id">Adresse</label>
+            <input type="text" id ="Adresse">
+        </div>
+
+        <div class="input-box">
+            <label for="id">tâche</label>
+            <input type="text" id ="tâche">
+        </div>
+        <div class="input-box">
+            <button id="enregistre-bnt"> Enregistré</button>
+            <button disabled="disabled" style="background-color:#EE534f">Mise à jour</button>
+        </div>
+
+        </form>
+        </div>
+        
+     </div>
+     <script src="../F js/essai.js"></script>
+</body>
+</html>

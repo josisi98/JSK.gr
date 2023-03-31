@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300&family=Rum+Raisin&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rum Raisin",sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(2, 17, 28);
+}
+
+.form_container{
+    margin-top: 20px;
+    width: 40vw;
+    border-radius: 10px;
+    height: 100vh;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+form input{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+
+form button{
+    padding: 10px;
+    background-color: rgb(36, 17, 104);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add_div{
+    width: 100%;
+    padding: 10px 0px 0px 90px;
+}
+
+.add_div button{
+    padding: 8px;
+    background-color: rgb(36, 17, 104);
+    color: white;
+    border-radius: 7px;
+}
+
+.add_div button:hover{
+    background-color: rgb(49, 6, 112);
+    cursor: pointer;
+}
+
+table{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+table button{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+table .modifier{
+    background-color: blue;
+    color: white;
+}
+
+table .supprimer{
+    background-color: red;
+    color: white;
+}
+
+.update_from, .creat_form{
+    display: none;
+} 
